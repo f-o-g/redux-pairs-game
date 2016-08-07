@@ -4,9 +4,9 @@ An implementation of the concentration game using React, Redux, Webpack and ES6
 
 ### Features ###
 
-● Gets nice photos from the EyeEm API
-● Multi-player mode
-● 3 levels of difficulty
+- Gets nice photos from the EyeEm API
+- Multi-player mode
+- 3 levels of difficulty
 
 ### Set up ###
 
