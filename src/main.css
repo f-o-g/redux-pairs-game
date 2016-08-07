@@ -1,0 +1,408 @@
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+h3, h4, h5 {
+    font-weight: normal;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+    max-width: 784px;
+    margin: 0 auto;
+}
+
+/******************* Header *******************/
+
+.header-container {
+  padding:0.5em;
+  background-color: #000;
+  text-align:center;
+}
+
+.header-title {
+  color: #ffffff;
+}
+
+.header-title a {
+    border:0;
+    color:inherit;
+    font-weight:inherit;
+    text-decoration: none;
+}
+
+.header-title a:focus,
+.header-title a:hover,
+.header-title a:active {
+    color: #ccc;
+}
+
+@media(min-width:768px) {
+  .header .header-title {
+      font-size:1.5em
+  }
+}
+
+/******************* Home *******************/
+
+.home-buttons {
+  margin-top: 200px;
+}
+
+/******************* Board *******************/
+
+.board {
+    max-width: 784px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+/******************* PhotoCard *******************/
+
+.card-container {
+    padding: 0;
+    float: left;
+    margin: 10px;
+    width: 176px;
+    height: 176px;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.card-container img {
+    height: 176px;
+    position: relative;
+    left: 0;
+}
+.card-container:hover .front {
+    -webkit-box-shadow: 0 0 10px #ccc;
+}
+.card-container .flipper.flipped {
+    transform: rotateY(180deg);
+    cursor: not-allowed;
+}
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 0;
+}
+.front {
+    width: 176px;
+    height: 176px;
+    z-index: 2;
+    transform: rotateY(0deg);
+    background-image: url('/static/eyeem.png');
+    background-size: cover;
+    -webkit-transition-property: opacity, transform, box-shadow;
+    -webkit-transition-duration: .3s;
+    -webkit-backface-visibility: hidden;
+}
+.back {
+    transform: rotateY(180deg);
+}
+
+/******************* Buttons *******************/
+
+.button {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-radius: 2px;
+  padding: 7px 16px 9px;
+  vertical-align: top;
+  text-decoration: none;
+  text-shadow: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.filled {
+  color: #ffffff;
+  background-color: #2c8;
+  border: 1px solid #2c8;
+}
+
+.filled-disabled {
+  color: #777;
+  background-color: #ddd;
+  border: 1px solid #ddd;
+}
+
+.filled:hover {
+  opacity: 0.8;
+}
+
+.bordered {
+  border: 1px solid #666;
+  background-color: transparent;
+  color: #666;
+}
+
+.bordered:focus,
+.bordered-selected:focus,
+.filled:focus,
+.filled-disabled:focus
+{
+    outline: none;
+}
+
+.bordered-selected {
+  color: #2c8;
+  border: 1px solid #2c8;
+  background-color: transparent;
+}
+
+.bordered:hover {
+  color: #2c8;
+  border-color: #2c8;
+}
+
+/******************* Create Game *******************/
+
+.create-game-panel {
+  border: 1px solid rgba(0,0,0,.1);
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  padding: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 50px;
+}
+
+/******************* Multiplayer *******************/
+
+.container {
+    padding: 5px;
+}
+
+.card {
+    border: solid 1px #ddd;
+    padding: 5px;
+}
+
+/******************* Flexbox *******************/
+
+.inline-flex {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: -o-inline-flex;
+    display: inline-flex;
+}
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: flex;
+}
+.wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.row {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+}
+.column {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+.row-reverse {
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -o-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+.column-reverse {
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+.justify-start {
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+}
+.justify-end {
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    justify-content: flex-end;
+}
+.justify-center {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+.justify-between {
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
+.justify-around {
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    justify-content: space-around;
+}
+.align-items-start {
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    align-items: flex-start
+}
+.align-items-center {
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.align-items-end {
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    align-items: flex-end;
+}
+.align-items-baseline {
+    -webkit-align-items: baseline;
+    -moz-align-items: baseline;
+    -ms-align-items: baseline;
+    align-items: baseline;
+}
+.align-items-stretch {
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    align-items: stretch;
+}
+.align-content-start {
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    -ms-align-content: flex-start;
+    align-content: flex-start;
+}
+.align-content-end {
+    -webkit-align-content: flex-end;
+    -moz-align-content: flex-end;
+    -ms-align-content: flex-end;
+    align-content: flex-end;
+}
+.align-content-center {
+    -webkit-align-content: center;
+    -moz-align-content: center;
+    -ms-align-content: center;
+    align-content: center;
+}
+.align-content-between {
+    -webkit-align-content: space-between;
+    -moz-align-content: space-between;
+    -ms-align-content: space-between;
+    align-content: space-between;
+}
+.align-content-around {
+    -webkit-align-content: space-around;
+    -moz-align-content: space-around;
+    -ms-align-content: space-around;
+    align-content: space-around;
+}
+.align-content-stretch {
+    -webkit-align-content: stretch;
+    -moz-align-content: stretch;
+    -ms-align-content: stretch;
+    align-content: stretch;
+}
+.align-self-end {
+    webkit-align-self: flex-end;
+    -moz-align-self: flex-end;
+    -ms-align-self: flex-end;
+    align-self: flex-end;
+}
+.align-self-center {
+    webkit-align-self: center;
+    -moz-align-self: center;
+    -ms-align-self: center;
+    align-self: center;
+}
+
+.cell {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+}
+/******************* Position *******************/
+
+.absolute {
+    position: absolute
+}
+.relative {
+    position: relative
+}
+
+.full {
+  width: 100%
+}
+
+/******************* Text *******************/
+
+.text-center {
+    text-align: center
+}
+
+.text-huge {
+    font-size: 2.5em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+/******************* Buttons *******************/
+
+.btn-disabled {}
+
+.btn-selected {
+    background-color: green;
+}
+
+/******************* Development *******************/
+
+/*.border-dev {*/
+    /*border: solid 1px #333;*/
+/*}*/
